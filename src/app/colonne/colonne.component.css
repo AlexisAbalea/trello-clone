@@ -1,0 +1,13 @@
+.placement-form {
+margin-top: 20px;
+}
+.icone-style {
+  color: gray;
+}
+
+.input-style {
+  width: 90%;
+  border-radius: 16px;
+  border: solid rgba(128, 128, 128, 0.438) 0.5px;
+  outline: none;
+}

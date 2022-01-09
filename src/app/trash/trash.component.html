@@ -1,0 +1,8 @@
+<section *ngIf="isDragged"
+    (dragover)="onDragOver($event);"
+    (drop)="onDrop($event);">
+    <span class="trash" [ngClass]="{'trashDragHover': isDragOver}">
+      <span></span>
+      <i></i>
+    </span>
+</section>

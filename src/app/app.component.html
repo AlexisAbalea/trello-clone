@@ -1,8 +1,11 @@
-<h1>TrelloClone</h1>
-<button
-  class="py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400">Hello</button>
-<div class="container">
-  <colonne></colonne>
-  <colonne></colonne>
-  <colonne></colonne>
+<div class="h-screen overflow-auto">
+  <div class="p-4">
+    <h1 class="text-4xl font-medium text-gray-700 m-10">Trello Lite</h1>
+  </div>
+  <div class="flex flex-row justify-center h-4/5 space-x-12">
+    <colonne nom="To Do" [taches]="data.tachesTodo" (isDragged)="eventIsDragged()" (saveData)="saveData()" class="largeur-colonne"></colonne>
+    <colonne nom="Doing" [taches]="data.tachesDoing" (isDragged)="eventIsDragged()" (saveData)="saveData()" class="largeur-colonne"></colonne>
+    <colonne nom="Done" [taches]="data.tachesDone" (isDragged)="eventIsDragged()" (saveData)="saveData()" class="largeur-colonne"></colonne>
+  </div>
+  <trash [isDragged]="isDragged"></trash>
 </div>
