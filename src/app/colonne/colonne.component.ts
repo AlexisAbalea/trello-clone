@@ -25,6 +25,7 @@ export class ColonneComponent implements OnInit {
     this.nouvelleTache = '';
     this.taches.push(tache);
     this.saveData.emit();
+    this.enableAdd = false;
   }
 
   onDragStart(event :any, tache: string) {
@@ -51,7 +52,7 @@ export class ColonneComponent implements OnInit {
     const tache = event
     .dataTransfer
     .getData('text');
-    this.taches.push(tache);
+    this.taches.unshift(tache);
     event.dataTransfer.clearData();
   }
 

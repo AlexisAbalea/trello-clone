@@ -1,6 +1,18 @@
-.placement-form {
-margin-top: 20px;
+.button-position {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
 }
+
+.colonne-style {
+  height: 94%;
+  position: relative;
+}
+
+.titre-colonne {
+  padding: 1em;
+}
+
 .icone-style {
   color: gray;
 }
@@ -10,4 +22,13 @@ margin-top: 20px;
   border-radius: 16px;
   border: solid rgba(128, 128, 128, 0.438) 0.5px;
   outline: none;
+}
+
+.card-style {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
