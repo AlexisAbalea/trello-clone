@@ -19,6 +19,7 @@ export class ColonneComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.taches);
   }
 
   addTache(tache: string) {

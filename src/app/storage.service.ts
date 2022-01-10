@@ -17,7 +17,7 @@ export class StorageService {
 
   get() {
     try {
-      let storage = JSON.parse(localStorage.getItem('trelloLite') || '{}');
+      let storage = localStorage.getItem('trelloLite');
       if (!storage) {
         return {
           tachesTodo: [],
@@ -25,7 +25,7 @@ export class StorageService {
           tachesDone: []
         };
       }
-      return storage;
+      return JSON.parse(storage || '{}');
     } catch (e) {
       console.error('Error getting data from localStorage', e);
       return null;

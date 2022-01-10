@@ -1,6 +1,6 @@
 {
-  "name": "trello-clone",
-  "version": "0.0.0",
+  "name": "trello-lite",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
