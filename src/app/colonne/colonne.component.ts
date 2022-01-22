@@ -24,7 +24,7 @@ export class ColonneComponent implements OnInit {
 
   addTache(tache: string) {
     this.nouvelleTache = '';
-    this.taches.push(tache);
+    this.taches.unshift(tache);
     this.saveData.emit();
     this.enableAdd = false;
   }
