@@ -10,14 +10,8 @@ export class AppComponent {
 
   data: any = {};
 
-  isDragged = false;
-
   constructor(private storage: StorageService) {
     this.getData();
-  }
-
-  eventIsDragged() {
-    this.isDragged = !this.isDragged;
   }
 
   saveData() {
@@ -27,6 +21,5 @@ export class AppComponent {
   getData() {
     this.data = this.storage.get();
   }
-
 
 }

@@ -8,6 +8,9 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TrashComponent } from './trash/trash.component';
 import { StorageService } from './storage.service';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { StorageService } from './storage.service';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    DragDropModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [StorageService],
   bootstrap: [AppComponent]

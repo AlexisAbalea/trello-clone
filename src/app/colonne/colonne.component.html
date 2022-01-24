@@ -1,13 +1,14 @@
 <div class="bg-white rounded-2xl shadow-2xl colonne-style">
   <h2 class="text-lg text-gray-700 font-semibold titre-colonne">{{ nom }}</h2>
-  <div (dragover)="onDragOver($event);"
-      (drop)="onDrop($event);"
-      class="card-style">
+  <div class="card-style"
+      [id]='nom'
+      cdkDropList
+      [cdkDropListData]="taches"
+      (cdkDropListDropped)="drop($event)"
+      [cdkDropListConnectedTo]="['ToDo', 'Doing', 'Done', 'trash']">
     <div class="text-sm mt-4"
         *ngFor="let tache of taches;"
-        draggable="true"
-        (dragstart)="onDragStart($event, tache);"
-        (dragend)="onDragEnd($event, tache)">
+        cdkDrag>
       <card [tache]="tache"></card>
     </div>
   </div>

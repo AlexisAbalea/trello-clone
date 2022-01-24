@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'trash',
@@ -7,23 +8,24 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TrashComponent implements OnInit {
 
-  @Input() isDragged: boolean = false;
-
-  isDragOver: boolean = false;
+  trashList: string[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onDragOver(event:any) {
-    this.isDragOver = true;
-    event.preventDefault();
-  }
-
- onDrop(event:any) {
-    this.isDragOver = false;
-    event.dataTransfer.clearData();
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
   }
 
 }

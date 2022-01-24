@@ -1,9 +1,9 @@
 <h1 class="text-4xl font-medium text-gray-700 p-10">Trello Lite</h1>
 <div class="flex flex-row justify-center h-4/5 space-x-12">
-  <colonne nom="To Do" [taches]="data.tachesTodo" (isDragged)="eventIsDragged()" (saveData)="saveData()" class="largeur-colonne"></colonne>
-  <colonne nom="Doing" [taches]="data.tachesDoing" (isDragged)="eventIsDragged()" (saveData)="saveData()" class="largeur-colonne"></colonne>
-  <colonne nom="Done" [taches]="data.tachesDone" (isDragged)="eventIsDragged()" (saveData)="saveData()" class="largeur-colonne"></colonne>
+  <colonne nom="ToDo" [taches]="data.tachesTodo" (saveData)="saveData()" class="largeur-colonne"></colonne>
+  <colonne nom="Doing" [taches]="data.tachesDoing" (saveData)="saveData()" class="largeur-colonne"></colonne>
+  <colonne nom="Done" [taches]="data.tachesDone" (saveData)="saveData()" class="largeur-colonne"></colonne>
 </div>
-<trash [isDragged]="isDragged"></trash>
+<trash></trash>
 
 

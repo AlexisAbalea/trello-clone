@@ -1,8 +1,7 @@
-<section *ngIf="isDragged"
-    (dragover)="onDragOver($event);"
-    (drop)="onDrop($event);">
-    <span class="trash" [ngClass]="{'trashDragHover': isDragOver}">
-      <span></span>
-      <i></i>
-    </span>
-</section>
+<div id="trash"
+cdkDropList (cdkDropListDropped)="drop($event)"
+[cdkDropListData]="trashList">
+    <button mat-fab color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
